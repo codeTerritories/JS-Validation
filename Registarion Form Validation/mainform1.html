@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="mainform1.css">
+    <title>Registration Form</title>
+</head>
+
+
+
+<div class="container-fluid main">
+    <h1 class="h1 text-center ms-3  text-light">Registration Form</h1>
+    <form action="" class="mt-5" method="post" name="myform" id="form">
+        <div class="row row1">
+
+
+            <div class="col form-cotrol">
+                  <div >
+                <label for="first name">First Name:</label>
+                <input class="form-control" type="text" id="name" name="first name" placeholder="First letter should be capital" required>
+                <p id="nerror" class="text-danger font-weight-bold"></p>
+                
+                  </div>
+                <br>
+                <label for="last name">Last Name:</label>
+                <input class="form-control" type="text" id="lname" name="name" placeholder="First letter should be capital" required>
+                <p id="lnerror" class="text-danger font-weight-bold"></p>
+                <br>
+                <label for="radio" class="drop" >Please select your gender: </label>
+                <!-- <select id="gender">
+                    <option value="Select" selected>-Select Gender-</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select> -->
+
+                <input type="radio" id="gender" name="gender" value="male" required x /> Male
+                <input type="radio" id="gender" name="gender" value="Fmale" /> Female
+                <input type="radio" id="gender" name="gender" value="Other" /> Other
+                <br>
+                <br>
+
+                <label for="address">Address:</label>
+                <input class="form-control" type="text" id="address" name="address"
+                    placeholder="Locality/House/Street no." required>
+                <p id="adError" class="text-danger font-weight-bold"></p>
+                <br>
+
+                <label for="address">State:</label>
+                <input class="form-control" type="text" id="state" name="address"
+                    placeholder="Enter your State" required>
+                <p id="stateError" class="text-danger font-weight-bold"></p>
+                <br>
+
+                <label for="password">Password:</label>
+                <input class="form-control" type="password" id="password" name="password"
+                    placeholder="Enter your Password" required>
+                    <input type="checkbox" onclick="myFunction()">Show Password
+                <p id="psError" class="text-danger font-weight-bold"></p>
+                <br>
+
+                <label for="country">country:</label>
+                <input class="form-control" type="text" id="country" name="country"
+                    placeholder="Enter your Country Name" required>
+                <p id="countryError" class="text-danger font-weight-bold"></p>
+                <br>
+            
+
+            </div>
+
+            
+
+
+
+            <div class="col ">
+
+                <label for="email">Email:</label>
+                <input class="form-control" type="email" id="email" name="email" placeholder="" required>
+                <p id="emailerror" class="text-danger font-weight-bold"></p>
+
+
+                <br>
+
+                <div class="row">
+                    <div class="row-sm-3 mobwidth">
+                        <label for="phone"></label>
+                        <select name="phone" id="countrycode" class="size" onchange="numdigit()" required>
+                            <option value="option">country</option> 
+                            <option value="IND">IND +91</option> 
+                            <option value="AFG">AFG +93</option>
+                            <option value="AUS">AUS +61</option>
+                            <option value="UK">US +1</option>
+                          </select>
+                
+                    </div>
+                    <div class="row-sm-9 mobwidth2">
+
+                        <label for="phone1">Mobile No.</label>
+                        <input class="form-control" type="tel" id="phone" name="number" required>
+                        <p id="phError" class="text-danger font-weight-bold"></p>
+                        
+                    </div>
+                </div>
+
+                <br>
+
+                <label for="birthday">Birthday:</label>
+                <input type="text" id="birthday" name="birthday" placeholder="dd/mm/yyyy" required>
+                <p id="daterror" class="text-danger font-weight-bold"></p>
+                
+
+                <label for="lastAddress" class="gapAddress">Address Line-2:</label>
+                <input class="form-control" type="text" id="address2" name="address2" placeholder="Village/CityName" required>
+                <p id="adError2" class="text-danger font-weight-bold"></p>
+                <br>
+
+                <label for="pincode" class="pincode">Pin code:</label>
+                <input class="form-control" type="pincode" id="pincode" name="pincode" placeholder="postal-code Only indian" required>
+                <p id="pinError" class="text-danger font-weight-bold"></p> 
+                
+                <br>
+                <label for="password" class="psp">Confirm Password:</label>
+                <input class="form-control psp1" type="password" id="cpassword" name="Cpassword"
+                    placeholder="Enter your Password again" required>
+                <p id="cpsError" class="text-danger font-weight-bold"></p>
+                <br>
+
+
+                <label for="ID" >Select ID Type:</label>
+                <select name="ID" id="identity"required>
+                    <option value="">Select</option> 
+                    <option value="Adhaar">Adhaar</option> 
+                    <option value="Pan">Pan card</option> 
+                    <option value="DL">Driving License</option>
+                   
+                  </select>
+                  <br>
+                  <label for="number" ></label>
+                  <input class="form-control " type="text" id="card" 
+                      placeholder="Enter your ID number" required>
+                  <p id="cardError" class="text-danger font-weight-bold"></p>
+                <br>
+
+            </div>
+
+
+            <button class="btn btn1" id="button" onclick="validate()">submit</button>
+            
+        </div>
+
+    </form>
+</div>
+
+
+
+<script src="script1.js">
+</script>
+
+<body>
+
+</body>
+
+</html>
